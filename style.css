@@ -1,15 +1,20 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 *{
     box-sizing: border-box;
 }
 
 body{
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     background-color: #22252d;
+}
+
+body.active{
+    background-color: #fff;
 }
 
 .container{
@@ -23,6 +28,10 @@ body{
     border-radius: 20px;
 }
 
+.container.active{
+    background: #22252d;
+}
+
 .display{
     min-height: 170px;
     background-color: #fff;
@@ -31,6 +40,17 @@ body{
     align-items: flex-end;
     justify-content: flex-end;
     padding: 0.5rem 1rem;
+}
+
+.display.active{
+    background-color: #22252d;
+    color: #fff;
+}
+
+.display .operator,
+.display .brackets,
+.display .percentage{
+    color: #127CB8;
 }
 
 .content{
@@ -43,11 +63,16 @@ body{
 .display .input{
     font-size: 1.25rem;
     font-weight: 100;
-    margin-bottom: 6px;
+    margin-bottom: 2px;
+    color: #22252d;
+}
+
+.display .input{
+    color: #ffffffda;
 }
 
 .display .input span.operator{
-    color: blue;
+    color: #127CB8;
 }
 
 .display .output{
@@ -64,16 +89,30 @@ body{
     grid-template-rows: repeat(5, 1fr);
     background: #fff;
     grid-gap: 1rem;
+    box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.1);
+}
+
+.keys.active{
+    background-color: #22252d;
+    color: #fff;
+    box-shadow: 0px -2px 8px rgba(18, 124, 184, 0.5);
 }
 
 .keys .key{
     position: relative;
     cursor: pointer;
     display: block;
-    background-color: gold;
+    background-color: #fff;
     padding-top: 100%;
     height: 0;
     user-select: none;
+    border-radius: 50%;
+    box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key.active{
+    background-color: #22252d;
+    box-shadow: 2px 0px 4px rgba(18, 124, 184, 0.2);
 }
 
 .key span{
@@ -89,5 +128,15 @@ body{
 }
 
 .key.operator, .key.action{
-    color: blue;
+    color: #127CB8;
+}
+
+.key.operator{
+    font-weight: 700;
+}
+
+.key.equal{
+    background-color: #127CB8;
+    color: #fff;
+    box-shadow: 2px 0 16px rgba(18, 124, 184, 0.5);
 }

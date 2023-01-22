@@ -5,16 +5,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Calculator</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">\
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="style.css">
         <script src="main.js" async defer></script>
     </head>
     <body>
         <div class="container">
+
+            <div class="mode">
+                <i class="fa-solid fa-sun-bright"></i>
+            </div>
+
             <div class="display">
                 <div class="content">
-                    <div class="input">120 <span class="operator">+</span> 100</div>
-                    <div class="output">220</div>
+                    <div class="input"></div>
+                    <div class="output"></div>
                 </div>
             </div>
 
@@ -35,7 +41,7 @@
                     <span>7</span>
                 </div>
                 <div data-key="8" class="key">
-                    <span>9</span>
+                    <span>8</span>
                 </div>
                 <div data-key="9" class="key">
                     <span>9</span>
@@ -65,7 +71,7 @@
                     <span>3</span>
                 </div>
                 <div data-key="*" class="key operator">
-                    <span>x</span>
+                    <span>×</span>
                 </div>
                 <div data-key="0" class="key">
                     <span>0</span>
@@ -73,10 +79,10 @@
                 <div data-key="." class="key">
                     <span>.</span>
                 </div>
-                <div data-key="( )" class="key action">
+                <div data-key="brackets" class="key action">
                     <span>( )</span>
                 </div>
-                <div data-key="=" class="key action">
+                <div data-key="=" class="key action equal">
                     <span>=</span>
                 </div>
             </div>
