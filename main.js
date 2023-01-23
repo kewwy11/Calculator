@@ -1,6 +1,12 @@
 const keys = document.querySelectorAll('.key')
 const inputValue = document.querySelector('.display .input')
 const output = document.querySelector('.display .output')
+const icon = document.querySelector('.mode')
+const body = document.querySelector('body')
+const container = document.querySelector('.container')
+const display = document.querySelector('.display')
+const keysBackground = document.querySelector('.keys')
+const keyEl = document.querySelectorAll('.key')
 
 let input = ''
 
@@ -18,7 +24,7 @@ keys.forEach(key => {
             inputValue.innerHTML = input
         }
         else if(value === '='){
-            let result = eval(input)
+            let result = eval(prepareInput(input))
             output.innerHTML = cleanOutput(result)
         }
         else if(value === 'brackets'){
@@ -122,13 +128,30 @@ function inputValidation(value){
     return true
 }
 
-function prepareInput(input){
+function prepareInput (input){
     let inputArray = input.split('')
 
-    for (let i = 0; inputArray.length; i++){
+    for (let i = 0; i < inputArray.length; i++){
         if(inputArray[i] === '%'){
             inputArray[i] = '/100'
         }
     }
     return inputArray.join('')
 }
+
+icon.addEventListener('click', () => {
+    icon.classList.toggle('active')
+    body.classList.toggle('active')
+    container.classList.toggle('active')
+    display.classList.toggle('active')
+    inputValue.classList.toggle('active')
+    keysBackground.classList.toggle('active')
+    keys.forEach(key => key.classList.toggle('active'));
+
+    if(icon.classList.contains('fa-moon')){
+        icon.classList.replace('fa-moon', 'fa-sun')
+    } 
+    else{
+        icon.classList.replace('fa-sun', 'fa-moon')
+    }
+})
