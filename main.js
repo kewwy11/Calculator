@@ -40,7 +40,7 @@ keys.forEach(key => {
                 input.indexOf(')') === -1 ||
                 input.indexOf('(') !== -1 &&
                 input.indexOf(')') !== -1 &&
-                input.lastIndexOf('(') < input.lastIndexOf(')')
+                input.lastIndexOf('(') > input.lastIndexOf(')')
             ){
                 input += ')'
             }
